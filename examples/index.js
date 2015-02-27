@@ -14,9 +14,9 @@ app.get('/', function (req, res) {
 
 var clients = {};
 
-var living_room_motion_1 = pubsub.get('motion/living_room/1');
-var living_room_light = pubsub.get('light/living_room');
-var living_room_display = pubsub.get('display/living_room');
+var living_room_motion_1 = pubsub('motion/living_room/1');
+var living_room_light = pubsub('light/living_room');
+var living_room_display = pubsub('display/living_room');
 
 io.on('connection', function (socket) {
   clients[socket.id] = socket;

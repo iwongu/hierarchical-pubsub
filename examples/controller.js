@@ -19,28 +19,28 @@ var restartTimer = function(callback) {
   }, timer_ms);
 };
 
-var living_room_display_1 = pubsub.get('display/living_room/1');
+var living_room_display_1 = pubsub('display/living_room/1');
 
-var living_room_light_all = pubsub.get('light/living_room').
+var living_room_light_all = pubsub('light/living_room').
     on('value', function(data) {
       light_status = data.value.status;
       living_room_display_1.setValue({message: 'light:' + data.value.status});
     });
 
-var living_room_motion_all = pubsub.get('motion/living_room').
+var living_room_motion_all = pubsub('motion/living_room').
     on('value', function(data) {
       living_room_display_1.setValue({message: 'motion:' + data.value.status});
       if (data.value.status) {
         stopTimer();
         if (!light_status) {
-          pubsub.get('light/living_room').walkDown(function(node) {
+          pubsub('light/living_room').walkDown(function(node) {
             node.setValue({status: true});
           });
         }
       } else {
         if (light_status) {
           restartTimer(function() {
-            pubsub.get('light/living_room').walkDown(function(node) {
+            pubsub('light/living_room').walkDown(function(node) {
               node.setValue({status: false});
             });
           });
