@@ -1,7 +1,19 @@
 {
-  "name": "node-pubsub",
+  "name": "hierarchical-pubsub",
   "version": "0.0.1",
-  "description": "Simple pub/sub with tree structure in node.js",
+  "description": "Simple pub/sub with hierarchical structure in node.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:iwongu/hierarchical-pubsub.git"
+  },
+  "homepage": "https://github.com/iwongu/hierarchical-pubsub",
+  "bugs": {
+    "url": "https://github.com/iwongu/hierarchical-pubsub/issues"
+  },
+  "tags": [
+    "hierarchical",
+    "pubsub"
+  ],
   "devDependencies": {
   },
   "dependencies": {

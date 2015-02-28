@@ -1,9 +1,9 @@
-# node-pubsub
+# hierarchical-pubsub
 
-Simple pub/sub with tree structure in node.js
+Simple pub/sub with hierarchical structure in node.js
 
 ```js
-var pubsub = require('node-pubsub');
+var pubsub = require('hierarchical-pubsub');
 
 pubsub('foo/bar').
   on('value', function(data) {
