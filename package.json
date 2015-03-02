@@ -14,8 +14,10 @@
     "hierarchical",
     "pubsub"
   ],
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "dependencies": {
+    "extend": "^2.0.0",
+    "firebase": "^2.2.1",
+    "node-uuid": "^1.4.2"
   }
 }
